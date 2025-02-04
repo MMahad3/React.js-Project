@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./App.css";
 
+
 function App() {
   const [showSplash, setShowSplash] = useState(true);
 
@@ -42,13 +43,16 @@ function App() {
           </header>
 
           {/* Hero Section */}
+          
           <section className="hero">
             <div className="hero-content">
-              <h2>Hi, I'm <span>Mahad Munir</span></h2>
+              <h2> Hi, I am <span>Mahad Munir !</span></h2>
               <p>A Final Year Computer Science Student specializing in AI, Data Science, and Quantum Computing</p>
               <a href="#projects" className="btn">View My Work</a>
             </div>
           </section>
+
+         
 
           {/* About Section */}
           <section id="about" className="section">
@@ -90,7 +94,7 @@ function App() {
 
           {/* Footer */}
           <footer className="footer">
-            <p>&copy; 2023 Mahad Munir. All rights reserved.</p>
+            <p>&copy; 2025 Mahad Munir. All rights reserved.</p>
           </footer>
         </>
       )}
