@@ -106,79 +106,83 @@ body {
 }
 
 /* Hero Section */
-.hero {
 
-  display:flex;
-  flex-direction: column;
+.hero {
+  margin-top: 600px;
+  display: flex;
   justify-content: center;
   align-items: center;
-  height: auto;
-  width: 50%;
-  text-align: center;
-  background: linear-gradient(135deg, #0a0a0a, #1a1a1a); /* Subtle gradient */
-  padding: 20px 20px;
+  height: auto; /* Full screen height */
+  background: linear-gradient(135deg, #0a0a0a, #1a1a1a);
   box-sizing: border-box;
-  z-index: 10;
-  margin-top: 500px; /* Push the hero section down to avoid header overlap */
+  padding: 40px;
 }
 
+/* Hero Grid - Two Columns */
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Two equal columns */
+  align-items: center;
+  max-width: 1200px;
+  width: 90%;
+  margin: 0 auto;
+  gap: 20px;
+  margin-left: 100px;
+}
+
+/* Hero Content */
 .hero-content {
-  max-width: 600px;
+  text-align: left;
+  color: white;
 }
 
-.hero h2 {
+.hero-content h2 {
   font-size: 3rem;
   margin-bottom: 10px;
   color: #00ffcc; /* Neon cyan */
-  overflow: hidden; /* Hides the text that is not yet typed */
-  white-space: nowrap; /* Prevents the text from wrapping */
-  display: inline-block; /* So that it behaves like a block but stays inline */
-  animation: typing 4s steps(30) 1s forwards, blink-caret .75s step-end infinite;
+  overflow: hidden;
+  white-space: nowrap;
+  display: inline-block;
+  animation: typing 4s steps(30) 1s forwards, blink-caret 0.75s step-end infinite;
 }
 
-.hero h2 span {
-  border-right: .15em solid #00ffcc; /* Creates a cursor effect on span */
-  animation: typing 4s steps(30) 1s forwards, blink-caret .75s step-end infinite;
+.hero-content span {
+  color: fuchsia;
+  border-right: 0.15em solid #00ffcc;
+  animation: typing 4s steps(30) 1s forwards, blink-caret 0.75s step-end infinite;
 }
 
-/* Typing Animation */
-@keyframes typing {
-  from {
-    width: 0; /* Starts with no text visible */
-  }
-  to {
-    width: 100%; /* Makes the entire text visible */
-  }
-}
-
-/* Blinking Caret */
-@keyframes blink-caret {
-  50% {
-    border-color: transparent; /* Makes the cursor disappear halfway */
-  }
-}
-
-
-.hero span {
-  color: #ff00ff; /* Neon magenta */
-  
-}
-
-.hero p {
+.hero-content p {
   font-size: 1.2rem;
   margin-bottom: 20px;
   opacity: 0.8;
 }
 
+/* Hero Image */
+.hero-image img {
+  margin-top: -50px;
+  display: flex-end;
+  width: 50%;
+  max-width: 300px;
+  height: 350px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px #00ffcc;
+  margin-right: -800px;
+  transition: transform 0.5s ease-in-out;
+  
+}
 
-
+.hero-image img:hover{
+  transform:scale(1.05);
+  box-shadow: 0px 0px 10px #ff00ff, 0 0 20px #ff00ff;
+}
 
 /* Button */
 .btn {
   display: inline-block;
   padding: 12px 24px;
   background-color: #00ffcc; /* Neon cyan */
-  color: #0a0a0a; /* Dark background */
+  color: #0a0a0a;
   text-decoration: none;
   font-size: 1.2rem;
   font-weight: bold;
@@ -191,36 +195,154 @@ body {
   box-shadow: 0 0 10px #ff00ff, 0 0 20px #ff00ff; /* Neon glow */
 }
 
-/* About Me Section */
-.about-me {
-  padding: 80px 20px;
-  background: linear-gradient(135deg, #0a0a0a, #1a1a1a); /* Subtle gradient */
-  margin-top: 80px; /* Ensures proper spacing from the hero section */
-  
+/* Typing Animation */
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
 }
 
+/* Blinking Caret */
+@keyframes blink-caret {
+  50% {
+    border-color: transparent;
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .hero-grid {
+    grid-template-columns: 1fr; /* Stack on smaller screens */
+    text-align: center;
+  }
+
+  .hero-content {
+    text-align: center;
+  }
+
+  .hero-image img {
+    margin: 0 auto;
+  }
+}
+
+.card {
+  margin-top: -330px;
+  margin-left: 400px;
+  max-width: 70px;
+  border-radius: 15px;
+  flex-direction: column;
+  backdrop-filter: blur(15px);
+  box-shadow: inset 0 0 20px rgba(255, 255, 255, 0.192),
+    inset 0 0 5px rgba(255, 255, 255, 0.274), 0 5px 5px rgba(0, 0, 0, 0.164);
+  transition: 0.5s;
+}
+
+.card:hover {
+  animation: ease-out 5s;
+  background: rgba(173, 173, 173, 0.05);
+}
+
+.card ul {
+  padding: 1rem;
+  display: flex;
+  list-style: none;
+  gap: 1rem;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+  flex-wrap: wrap;
+  flex-direction: column;
+}
+
+.card ul li {
+  cursor: pointer;
+}
+
+.svg {
+  transition: all 0.3s;
+  padding: 1rem;
+  height: 20px;
+  width: 20px;
+  border-radius: 100%;
+  color: #ff00ff;
+  fill: currentColor;
+  box-shadow: inset 0 0 20px rgba(255, 255, 255, 0.3),
+    inset 0 0 5px rgba(255, 255, 255, 0.5), 0 5px 5px rgba(0, 0, 0, 0.164);
+}
+
+.text {
+  opacity: 0;
+  border-radius: 5px;
+  padding: 5px;
+  transition: all 0.3s;
+  color: #00ffcc;
+  background-color: rgba(255, 255, 255, 0.3);
+  position: absolute;
+  z-index: 9999;
+  box-shadow: -5px 0 1px rgba(153, 153, 153, 0.2),
+    -10px 0 1px rgba(153, 153, 153, 0.2),
+    inset 0 0 20px rgba(255, 255, 255, 0.3),
+    inset 0 0 5px rgba(255, 255, 255, 0.5), 0 5px 5px rgba(0, 0, 0, 0.082);
+}
+
+.iso-pro {
+  transition: 0.5s;
+}
+.iso-pro:hover a > .svg {
+  transform: translate(15px, -15px);
+  border-radius: 100%;
+}
+
+.iso-pro:hover .text {
+  opacity: 1;
+  transform: translate(25px, -2px) skew(-5deg);
+}
+
+.iso-pro:hover .svg {
+  transform: translate(5px, -5px);
+}
+
+.iso-pro span {
+  opacity: 0;
+  position: absolute;
+  color: #1877f2;
+  border-color: #1877f2;
+  box-shadow: inset 0 0 20px rgba(255, 255, 255, 0.3),
+    inset 0 0 5px rgba(255, 255, 255, 0.5), 0 5px 5px rgba(0, 0, 0, 0.164);
+  border-radius: 50%;
+  transition: all 0.3s;
+  height: 60px;
+  width: 60px;
+}
+
+.iso-pro:hover span {
+  opacity: 1;
+}
+
+/* About Me Section */
+
 .about-me h2 {
-  font-size: 2.5rem;
-  margin-bottom: 20px;
   color: #00ffcc; /* Neon cyan */
 }
 
 .about-me p {
-  font-size: 1.1rem;
-  opacity: 0.9;
-  max-width: 800px;
-  margin: 0 auto;
+  background: linear-gradient(135deg, #1a1a1a, #2a2a2a); /* Subtle gradient */
+  border-radius: 10px;
+  padding: 20px;
 }
 
 /* Project Grid */
 
 .project-grid {
+  background-color: #0a0a0a;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 20px;
   margin-top: 40px;
-  margin-bottom: 100px;
-  
+  margin-bottom: 40px;
 }
 
 .section h2 {
@@ -236,6 +358,7 @@ body {
 }
 
 .project-card:hover {
+  
   transform: translateY(-10px);
   box-shadow: 0 0 20px #00ffcc, 0 0 40px #00ffcc; /* Neon glow */
 }
@@ -251,50 +374,100 @@ body {
   opacity: 0.8;
 }
 
+/* Experience Section */
+.experience{
+ 
+}
+
+.experience h2{
+  color: #00ffcc;
+}
+
+
 /* Contact Me Section */
 .contact-me {
-  background: linear-gradient(135deg, #0a0a0a, #1a1a1a); /* Subtle gradient */
-  padding: 20px 20px;
-  margin-top: 200px;
+  background-color: black;
+  text-align: center;
+  padding: 50px 20px;
 }
 
 .contact-me h2 {
-  font-size: 2.5rem;
   margin-bottom: 20px;
   color: #00ffcc; /* Neon cyan */
 }
 
-.contact-form {
-  max-width: 400px;
-  margin: 0 auto;
-  background-color: rgba(255, 255, 255, 0.1); /* Semi-transparent background */
-  padding: 20px;
-  border-radius: 10px;
-}
-
-.contact-form input,
-.contact-form textarea {
-  width: 100%;
-  padding: 12px;
-  margin-left: -13px;
-  margin-bottom: 20px;
-  background-color: #1a1a1a;
-  border: 1px solid #00ffcc; /* Neon cyan */
+.contact-me p {
+  font-size: 1.2rem;
   color: #fff;
-  border-radius: 5px;
-  font-size: 1rem;
+  opacity: 0.8;
+  margin-bottom: 20px;
 }
 
-.contact-form input[type="submit"] {
-  background-color: #00ffcc; /* Neon cyan */
+
+.contact-button {
+  font-family: inherit;
+  font-size: 18px;
+  margin-left: 740px;
+  width: 100px;
+  background: linear-gradient(to bottom, #00ffcc 0%, #ff00ff 100%);
+  color: white;
+  padding: 0.8em 1.2em;
+  display:flex;
+  border: none;
+  border-radius: 25px;
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s;
   cursor: pointer;
-  font-weight: bold;
 }
 
-.contact-form input[type="submit"]:hover {
-  background-color: #ff00ff; /* Neon magenta */
-  box-shadow: 0 0 10px #ff00ff, 0 0 20px #ff00ff; /* Neon glow */
+.contact-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.3);
 }
+
+.contact-button:active {
+  transform: scale(0.95);
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.contact-button span {
+  display: block;
+  margin-left: 0.4em;
+  transition: all 0.3s;
+}
+
+.contact-button:hover{
+  color: black;
+}
+
+.contact-button svg {
+  width: 18px;
+  height: 18px;
+  fill: white;
+  transition: all 0.3s;
+}
+
+.contact-button .svg-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.2);
+  margin-right: 0.5em;
+  transition: all 0.3s;
+}
+
+.contact-button:hover .svg-wrapper {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.contact-button:hover svg {
+  transform: rotate(45deg);
+}
+
+
 
 /* Footer */
 .footer {
