@@ -1,10 +1,11 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import "./App.css";
 import mahad from "./assets/images/me3.jpg"
 
 
 function App() {
   const [showSplash, setShowSplash] = useState(true);
+  const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
   
@@ -42,6 +43,22 @@ function App() {
               </ul>
             </nav>
           </header>
+
+          {/* Hamburger Button for Mobile */}
+          <button className="menu-btn" onClick={() => setMenuOpen(!menuOpen)}>
+              ☰
+            </button>
+
+            {/* Navigation Menu */}
+            <nav className={`nav-links ${menuOpen ? "show" : ""}`}>
+              <ul>
+                <li><a href="#about">ABOUT</a></li>
+                <li><a href="#projects">PROJECTS</a></li>
+                <li><a href="#experience">EXPERIENCE</a></li>
+                <li><a href="#education">EDUCATION</a></li>
+                <li><a href="#contact">CONTACT</a></li>
+              </ul>
+            </nav>
 
           {/* Hero Section */}
           <section className="hero">
@@ -133,14 +150,66 @@ function App() {
               </div>
               <div className="project-card">
                 <h3>{'MaadBazaar (Ecommerce Website)'}</h3>
+                <p>
+                  Built with React.js, Node.js, and SQL, this e-commerce website features product listings, user authentication, and a shopping cart. I applied database management concepts like indexing and query optimization to ensure efficient data handling, creating a seamless shopping experience with a responsive UI and optimized backend.
+                </p>
+              </div>
+              <div className="project-card">
+                <h3>Fifa WorldCup Predictor</h3>
+                <p>
+                A data science project predicting FIFA World Cup outcomes using a Kaggle dataset and machine learning techniques like linear and logistic regression. The project involves data preprocessing, feature engineering, and model evaluation to analyze team performance and predict match results.
+                </p>
               </div>
             </div>
           </section>
 
-          {/*Experience Section*/}
-          <section id="experience" className="experience">
+          {/* Experience Section */}
+          <section id="experience" className="section">
             <h2>Experience</h2>
+            <div className="experience-grid">
+              <div className="experience-card">
+                <h3>State Bank of Pakistan</h3>
+                <p>
+                <ul>
+                 <li>Researched fake and genuine currency note detection using machine learning.</li>
+                 <li>Analyzed computer vision techniques for currency authentication.</li>
+                 <li>Identified challenges in mobile-based detection, including camera limitations.</li>
+                 <li>Shifted focus to a research-based study due to technical constraints.</li>
+                 <li>Collaborated with mentors and senior team members on research methodologies.</li>
+                 <li>Explored algorithmic approaches for improving currency authentication.</li>
+                 <li>Documented findings and presented insights on potential solutions.</li>
+                </ul>
+                </p>
+              </div>
+              <div className="experience-card">
+                <h3>Interns Pakistan</h3>
+                <p>
+                <ul>
+                 <li>Learned frontend development using HTML, CSS, and Bootstrap.</li>
+                 <li>Developed responsive websites for cross-device compatibility.</li>
+                 <li>Gained hands-on experience in modern web design and UI/UX principles.</li>
+                 <li>Worked on styling and optimizing web pages for better user experience.</li>
+                 <li>Improved skills in creating visually appealing and functional websites.</li>
+                </ul>
+                </p>
+              </div>
+            </div>
           </section>
+
+
+          {/* Education Section */}
+          <section id="education" className="education">
+            <h2>Education</h2>
+            <div className="education-grid">
+              <div className="education-card">
+                <h3>FAST-nuces</h3>
+                <p>
+                   
+                </p>
+              </div>
+            </div>
+          </section>
+
 
 
         

@@ -103,15 +103,38 @@ body {
   transition: color 0.3s, text-shadow 0.3s;
 }
 
+/* Hide the navigation on small screens */
+@media screen and (max-width: 768px) {
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    background: rgba(0, 0, 0, 0.8); /* Dark background */
+    position: absolute;
+    top: 60px;
+    right: 10px;
+    width: 200px;
+    padding: 10px;
+    border-radius: 8px;
+  }
+
+  .nav-links.show {
+    display: flex;
+  }
+}
+
 .nav-links a:hover {
   color: #ff00ff; /* Neon magenta */
   text-shadow: 0 0 10px #ff00ff, 0 0 20px #ff00ff; /* Neon glow */
 }
 
+
+
+
+
 /* Hero Section */
 
 .hero {
-  margin-top: 600px;
+  margin-top: 1300px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -357,7 +380,7 @@ body {
   padding: 20px;
   border-radius: 10px;
   transition: transform 0.3s, box-shadow 0.3s;
-  
+  margin-bottom: 50px;
 }
 
 .project-card:hover {
@@ -378,13 +401,88 @@ body {
 }
 
 /* Experience Section */
-.experience{
+.experience-grid {
+  background-color: #0a0a0a;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
+.section h2 {
+  color: #00ffcc;
  
 }
 
-.experience h2{
-  color: #00ffcc;
+.experience-card {
+  background: linear-gradient(135deg, #1a1a1a, #2a2a2a); /* Subtle gradient */
+  padding: 20px;
+  border-radius: 10px;
+  transition: transform 0.3s, box-shadow 0.3s;
+  margin-bottom: 50px;
 }
+
+.experience-card:hover {
+  
+  transform: translateY(-10px);
+  box-shadow: 0 0 20px #00ffcc, 0 0 40px #00ffcc; /* Neon glow */
+}
+
+.experience-card h3 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  color: #00ffcc; /* Neon cyan */
+}
+
+.experience-card p {
+  font-size: 1rem;
+  opacity: 0.8;
+}
+
+/*Educatoin Section*/
+
+.education-grid {
+  background-color: #0a0a0a;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
+.education h2 {
+  color: #00ffcc;
+ 
+}
+
+.education-card {
+  background: linear-gradient(135deg, #1a1a1a, #2a2a2a); /* Subtle gradient */
+  padding: 20px;
+  border-radius: 10px;
+  transition: transform 0.3s, box-shadow 0.3s;
+  margin-bottom: 50px;
+}
+
+.education-card:hover {
+  
+  transform: translateY(-10px);
+  box-shadow: 0 0 20px #00ffcc, 0 0 40px #00ffcc; /* Neon glow */
+}
+
+.education-card h3 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  color: #00ffcc; /* Neon cyan */
+}
+
+.education-card p {
+  font-size: 1rem;
+  opacity: 0.8;
+}
+
+
+
 
 
 /* Contact Me Section */
