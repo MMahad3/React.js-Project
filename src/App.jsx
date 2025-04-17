@@ -19,7 +19,7 @@ function App() {
 
   return (
     <div className="container">
-      {/* Splash Screen */}
+   
       {showSplash && (
         <div className="splash-screen">
           <h1>Welcome to Mahad's Portfolio</h1>
